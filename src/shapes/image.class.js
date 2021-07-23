@@ -544,6 +544,12 @@
           x = -w / 2, y = -h / 2,
           maxDestW = min(w, elWidth / scaleX - cropX),
           maxDestH = min(h, elHeight / scaleY - cropY);
+      //fill override start
+      console.log('RENDER FILL');
+      ctx.beginPath();
+      ctx.rect(x, y, sW, sH);
+      ctx.fill();
+      //fill override end
 
       elementToDraw && ctx.drawImage(elementToDraw, sX, sY, sW, sH, x, y, maxDestW, maxDestH);
     },
