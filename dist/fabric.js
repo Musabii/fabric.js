@@ -20956,14 +20956,13 @@ fabric.util.object.extend(fabric.Object.prototype, /** @lends fabric.Object.prot
           x = -w / 2, y = -h / 2,
           maxDestW = min(w, elWidth / scaleX - cropX),
           maxDestH = min(h, elHeight / scaleY - cropY);
+      elementToDraw && ctx.drawImage(elementToDraw, sX, sY, sW, sH, x, y, maxDestW, maxDestH);
       //fill override start
       console.log('RENDER FILL');
       ctx.beginPath();
       ctx.rect(x, y, sW, sH);
       ctx.fill();
       //fill override end
-
-      elementToDraw && ctx.drawImage(elementToDraw, sX, sY, sW, sH, x, y, maxDestW, maxDestH);
     },
 
     /**
